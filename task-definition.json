@@ -1,0 +1,28 @@
+
+{
+  "family": "devops-static-task",
+  "executionRoleArn": "arn:aws:iam::584503398462:role/ecsTaskExecutionRole",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "cpu": "256",
+  "memory": "512",
+  "runtimePlatform": {
+    "cpuArchitecture": "X86_64",
+    "operatingSystemFamily": "LINUX"
+  },
+  "containerDefinitions": [
+    {
+      "name": "devops-static-app",
+      "image": "584503398462.dkr.ecr.ap-southeast-2.amazonaws.com/devops-static-app:v1",
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 80,
+          "protocol": "tcp"
+        }
+      ]
+    }
+  ]
+}
